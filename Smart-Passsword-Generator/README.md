@@ -1,16 +1,17 @@
 SMART PASSWORD GENERATOR APP
 
-This project generates random passwords to improve security and reduce predictable password usage.
+A Python-based password generation tool that creates secure, customizable passwords and evaluates their strength.
 
-Language Used - Java
-Generates random passwords
+- Custom password length
+- Uppercase support
+- Lowercase support
+- Numeric characters
+- Special symbols
+- Password strength analysis
 
-Uses letters, numbers, and symbols
+- Python
+- String Module
+- Secrets Module
 
-Simple user interaction
-
-Learn logic building
-
-Understand randomness in programming
-
-Practice Java basics
+Generated Password: A@8kL!2mP#9x
+Strength: Strong
