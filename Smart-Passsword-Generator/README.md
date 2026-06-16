@@ -14,4 +14,5 @@ A Python-based password generation tool that creates secure, customizable passwo
 - Secrets Module
 
 Generated Password: A@8kL!2mP#9x
+
 Strength: Strong
