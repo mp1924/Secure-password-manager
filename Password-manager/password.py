@@ -1,40 +1,29 @@
 import secrets
 import string
 
-print("Smart Password Generator")
 
-length = int(input("Enter password length: "))
+def generate_password(length, use_upper, use_lower, use_numbers, use_symbols):
+    char_pool = ""
 
-use_upper = input("Include uppercase? (y/n): ").lower() == "y"
-use_lower = input("Include lowercase? (y/n): ").lower() == "y"
-use_numbers = input("Include numbers? (y/n): ").lower() == "y"
-use_symbols = input("Include symbols? (y/n): ").lower() == "y"
+    if use_upper:
+        char_pool += string.ascii_uppercase
+    if use_lower:
+        char_pool += string.ascii_lowercase
+    if use_numbers:
+        char_pool += string.digits
+    if use_symbols:
+        char_pool += string.punctuation
 
-char_pool = ""
+    if not char_pool:
+        return None
 
-if use_upper:
-    char_pool += string.ascii_uppercase
+    password = "".join(secrets.choice(char_pool) for _ in range(length))
+    return password
 
-if use_lower:
-    char_pool += string.ascii_lowercase
-
-if use_numbers:
-    char_pool += string.digits
-
-if use_symbols:
-    char_pool += string.punctuation
-
-
-if len(char_pool) == 0:
-    print(" Error: No character types selected!")
-    exit()
-
-password = ""
-for i in range(length):
-    password += secrets.choice(char_pool)
-print("\nGenerated Password:", password)
 
 def check_strength(password):
+    import string
+
     score = 0
 
     if len(password) >= 8:
@@ -50,9 +39,6 @@ def check_strength(password):
 
     if score <= 2:
         return "Weak"
-    elif score in [3, 4]:
+    elif score <= 4:
         return "Medium"
-    else:
-        return "Strong"
-
-print("Password Strength:", check_strength(password))
+    return "Strong"
