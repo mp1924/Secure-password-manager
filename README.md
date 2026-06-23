@@ -54,7 +54,5 @@ Through this project, I gained practical experience in:
 
  ##Author
  Pavana Maddi
- 
- 
-Secure storage practices
-*
+  
+  
